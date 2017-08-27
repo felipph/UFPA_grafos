@@ -43,7 +43,7 @@ public class BuscaEmLargura {
                 while (a != null) {
                     int v = a.v2();
                     if (cor[v] == branco) {
-                        cor[v] = cinza;
+                        cor[v] = cinza; 
                         this.d[v] = this.d[u] + 1;
                         this.antecessor[v] = u;
                         fila.enfileira(new Integer(v));

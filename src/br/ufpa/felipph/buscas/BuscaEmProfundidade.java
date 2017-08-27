@@ -31,7 +31,7 @@ public class BuscaEmProfundidade {
     private int visitaDfs(int u, int tempo, int cor[]) {
         cor[u] = cinza;
         this.d[u] = ++tempo;
-    System.out.println ("Visita "+u+" Descoberta:"+this.d[u]+" cinza");
+        System.out.println("Visita " + u + " Descoberta:" + this.d[u] + " cinza");
         if (!this.grafo.listaAdjVazia(u)) {
             Aresta a = this.grafo.primeiroListaAdj(u);
             while (a != null) {
@@ -45,7 +45,7 @@ public class BuscaEmProfundidade {
         }
         cor[u] = preto;
         this.t[u] = ++tempo;
-    System.out.println ("Visita " +u+ " Termino:" +this.t[u]+ " preto");
+        System.out.println("Visita " + u + " Termino:" + this.t[u] + " preto");
         return tempo;
     }
 
@@ -75,4 +75,3 @@ public class BuscaEmProfundidade {
         return this.antecessor[v];
     }
 }
-
