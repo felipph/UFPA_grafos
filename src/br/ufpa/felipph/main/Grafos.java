@@ -17,14 +17,26 @@ public class Grafos {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws InterruptedException, IOException {
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Grafos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Grafos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Grafos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Grafos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
         System.out.println("Atividade prática de implementação de GRAFOS em JAVA");
-
-        Controller c = new Controller();
-
-        c.grafo2();
-
-        Thread.sleep(4000);
-        //System.exit(0);
+        
+        TelaInicial t = new TelaInicial();
+        t.setVisible(true);
     }
 
 }

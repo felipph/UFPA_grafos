@@ -49,6 +49,7 @@ public class Grafo {
                 + "["+v2+"]");
         return (this.mat[v1][v2] > 0);
     }
+    
 
     public boolean listaAdjVazia(int v) {
         for (int i = 0; i < this.numVertices; i++) {

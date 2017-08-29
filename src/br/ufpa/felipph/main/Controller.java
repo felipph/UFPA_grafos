@@ -10,6 +10,7 @@ import br.ufpa.felipph.buscas.Cfc;
 import br.ufpa.felipph.matrizadj.Aresta;
 import br.ufpa.felipph.matrizadj.Grafo;
 import br.ufpa.felipph.shared.ImgDisplay;
+import br.ufpa.felipph.shared.TextAreaOutputStream;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -22,60 +23,156 @@ import javax.imageio.ImageIO;
  */
 public class Controller {
 
-    public ArrayList<Aresta> arestas = new ArrayList<Aresta>();
+    public ArrayList<Aresta> arestasGrafo1 = new ArrayList<Aresta>();
+    public ArrayList<Aresta> arestasGrafo2 = new ArrayList<Aresta>();
+    public ArrayList<Aresta> arestasGrafo3 = new ArrayList<Aresta>();
 
-    public void grafo1() throws IOException, InterruptedException {
-        //exibindo o grafo da primeira questão
-        BufferedImage grafo1 = ImageIO.read(new File("./grafo_q1.png"));
+    public Controller() {
+        
+        
+        this.arestasGrafo1.add(new Aresta(0, 1, 1));
+        this.arestasGrafo1.add(new Aresta(1, 0, 1));
+
+        this.arestasGrafo1.add(new Aresta(0, 3, 1));
+        this.arestasGrafo1.add(new Aresta(3, 0, 1));
+
+        this.arestasGrafo1.add(new Aresta(0, 4, 1));
+        this.arestasGrafo1.add(new Aresta(4, 0, 1));
+
+        this.arestasGrafo1.add(new Aresta(1, 5, 1));
+        this.arestasGrafo1.add(new Aresta(5, 1, 1));
+
+        this.arestasGrafo1.add(new Aresta(1, 2, 1));
+        this.arestasGrafo1.add(new Aresta(2, 1, 1));
+
+        this.arestasGrafo1.add(new Aresta(2, 7, 1));
+        this.arestasGrafo1.add(new Aresta(7, 2, 1));
+
+        this.arestasGrafo1.add(new Aresta(2, 3, 1));
+        this.arestasGrafo1.add(new Aresta(3, 2, 1));
+
+        this.arestasGrafo1.add(new Aresta(3, 6, 1));
+        this.arestasGrafo1.add(new Aresta(6, 3, 1));
+
+        this.arestasGrafo1.add(new Aresta(4, 6, 1));
+        this.arestasGrafo1.add(new Aresta(6, 4, 1));
+
+        this.arestasGrafo1.add(new Aresta(4, 5, 1));
+        this.arestasGrafo1.add(new Aresta(5, 4, 1));
+
+        this.arestasGrafo1.add(new Aresta(5, 7, 1));
+        this.arestasGrafo1.add(new Aresta(7, 5, 1));
+
+        this.arestasGrafo1.add(new Aresta(6, 7, 1));
+        this.arestasGrafo1.add(new Aresta(7, 6, 1));
+
+        this.arestasGrafo2.add(new Aresta(0, 2, 1));
+        this.arestasGrafo2.add(new Aresta(0, 3, 1));
+
+        this.arestasGrafo2.add(new Aresta(1, 4, 1));
+        this.arestasGrafo2.add(new Aresta(1, 8, 1));
+
+        this.arestasGrafo2.add(new Aresta(2, 5, 1));
+
+        this.arestasGrafo2.add(new Aresta(3, 8, 1));
+        this.arestasGrafo2.add(new Aresta(3, 7, 1));
+
+        this.arestasGrafo2.add(new Aresta(4, 8, 1));
+
+        this.arestasGrafo2.add(new Aresta(5, 6, 1));
+
+        this.arestasGrafo2.add(new Aresta(6, 2, 1));
+
+        this.arestasGrafo2.add(new Aresta(7, 9, 1));
+
+        this.arestasGrafo2.add(new Aresta(8, 0, 1));
+
+        this.arestasGrafo2.add(new Aresta(9, 7, 1));
+
+    }
+
+    public void showGrafo1() throws IOException {
+        BufferedImage grafo1 = ImageIO.read(new File("./grafo_q1.PNG"));
         ImgDisplay img = new ImgDisplay(null, false, grafo1);
         Thread t = new Thread(img);
         t.start();
+    }
+
+    public String q1() {
+        String saida = "";
+
+        System.out.println("Q1. Elabore um procedimento que informe a existência, \n"
+                + "ou não, de uma certa aresta no grafo de entrada. A operação\n"
+                + " deve retornar “verdadeiro”, se a aresta (i, j) \n"
+                + "está presente no grafo, senão retornar “falso”\n\n");
+
+        System.out.println("=================");
+        System.out.println("Criando o grafo utilizando lista de adjacencia");
+
+        br.ufpa.felipph.listaadj.Grafo gadj = new br.ufpa.felipph.listaadj.Grafo(8);
+        for (Aresta a : this.arestasGrafo1) {
+            gadj.insereAresta(a.v1(), a.v2(), 1);
+        }
+        System.out.println("Lista:");
+        gadj.imprime();
+        
+        System.out.println("=================");
+        System.out.println("Criando o grafo utilizando Matriz de incidência");
+        Grafo g = new Grafo(8);
+        for (Aresta a : this.arestasGrafo1) {
+            g.insereAresta(a.v1(), a.v2(), 1);
+            //g.insereAresta(a.v2(), a.v1(), 1);
+        }
+        System.out.println("Matriz:");
+        g.imprime();
+
+        
+
+        long startTime = System.nanoTime();
+        System.out.println(g.existeAresta(0, 3));
+        System.out.println("------");
+        System.out.println(g.existeAresta(2, 1));
+        System.out.println("------");
+        System.out.println(g.existeAresta(2, 6));
+        System.out.println("------");
+        System.out.println("------");
+        long stopTime = System.nanoTime();
+        long elapsedTimeMatriz = stopTime - startTime;
+
+        startTime = System.nanoTime();
+        System.out.println("Utilizando Lista:");
+
+        System.out.println(gadj.checkAresta(0, 3));
+        System.out.println("------");
+        System.out.println(gadj.checkAresta(2, 1));
+        System.out.println("------");
+        System.out.println(gadj.checkAresta(2, 6));
+        stopTime = System.nanoTime();
+        long elapsedTimeLista = stopTime - startTime;
+
+        System.out.println("Tempos(em nanosegundos): ");
+        System.out.println("Matriz: ");
+        System.out.println(elapsedTimeMatriz);
+        System.out.println("Lista: ");
+        System.out.println(elapsedTimeLista);
+
+        System.out.println("Percebe-se que a matriz, é quase duas vezes \n"
+                + "mais eficiente para busca de arestas dado o grafo da \n"
+                + "questão pois somente necessita verificar se existe um índice\n"
+                + "em um vetor bidimencional. Já com lista, é necessário \n"
+                + "percorrer todos os adjacentes do vértice.");
+
+        return saida;
+    }
+
+    public void grafo1() throws IOException, InterruptedException {
+        //exibindo o grafo da primeira questão
 
         System.out.println("Populando o grafo utilizando Matriz de Adjacencia...");
-
         Grafo g = new Grafo(8);
-
         System.out.println("Criando arestas na ordem crescente dos vertices");
-
-        this.arestas.add(new Aresta(0, 1, 1));
-        this.arestas.add(new Aresta(1, 0, 1));
-
-        this.arestas.add(new Aresta(0, 3, 1));
-        this.arestas.add(new Aresta(3, 0, 1));
-
-        this.arestas.add(new Aresta(0, 4, 1));
-        this.arestas.add(new Aresta(4, 0, 1));
-
-        this.arestas.add(new Aresta(1, 5, 1));
-        this.arestas.add(new Aresta(5, 1, 1));
-
-        this.arestas.add(new Aresta(1, 2, 1));
-        this.arestas.add(new Aresta(2, 1, 1));
-
-        this.arestas.add(new Aresta(2, 7, 1));
-        this.arestas.add(new Aresta(7, 2, 1));
-
-        this.arestas.add(new Aresta(2, 3, 1));
-        this.arestas.add(new Aresta(3, 2, 1));
-
-        this.arestas.add(new Aresta(3, 6, 1));
-        this.arestas.add(new Aresta(6, 3, 1));
-
-        this.arestas.add(new Aresta(4, 6, 1));
-        this.arestas.add(new Aresta(6, 4, 1));
-
-        this.arestas.add(new Aresta(4, 5, 1));
-        this.arestas.add(new Aresta(5, 4, 1));
-
-        this.arestas.add(new Aresta(5, 7, 1));
-        this.arestas.add(new Aresta(7, 5, 1));
-
-        this.arestas.add(new Aresta(6, 7, 1));
-        this.arestas.add(new Aresta(7, 6, 1));
-
         System.out.println("Gerando a Matriz");
-
-        for (Aresta a : this.arestas) {
+        for (Aresta a : this.arestasGrafo1) {
             g.insereAresta(a.v1(), a.v2(), 1);
             //g.insereAresta(a.v2(), a.v1(), 1);
         }
@@ -89,7 +186,7 @@ public class Controller {
         System.out.println("Criando o grafo utilizando lista de adjacencia");
 
         br.ufpa.felipph.listaadj.Grafo gadj = new br.ufpa.felipph.listaadj.Grafo(8);
-        for (Aresta a : this.arestas) {
+        for (Aresta a : this.arestasGrafo1) {
             gadj.insereAresta(a.v1(), a.v2(), 1);
         }
         System.out.println("Lista:");
@@ -154,7 +251,7 @@ public class Controller {
             for (int j = 0; j < 8; j++) {
                 if (!g.existeAresta(i, j)) {
                     Aresta a = new Aresta(i, j, 1);
-                    this.arestas.add(a);
+                    this.arestasGrafo1.add(a);
                     g.insereAresta(a.v1(), a.v2(), 1);
                 } else {
                     System.out.println("Encontrada, nada a fazer...");
@@ -226,7 +323,6 @@ public class Controller {
     }
 
     public void grafo2() throws IOException {
-        ArrayList<Aresta> arestasGrafo = new ArrayList<Aresta>();
         /**
          * mostrando o grafo na tela
          */
@@ -236,29 +332,6 @@ public class Controller {
         t.start();
         //criando as arestas
 
-        arestasGrafo.add(new Aresta(0, 2, 1));
-        arestasGrafo.add(new Aresta(0, 3, 1));
-
-        arestasGrafo.add(new Aresta(1, 4, 1));
-        arestasGrafo.add(new Aresta(1, 8, 1));
-
-        arestasGrafo.add(new Aresta(2, 5, 1));
-
-        arestasGrafo.add(new Aresta(3, 8, 1));
-        arestasGrafo.add(new Aresta(3, 7, 1));
-
-        arestasGrafo.add(new Aresta(4, 8, 1));
-
-        arestasGrafo.add(new Aresta(5, 6, 1));
-
-        arestasGrafo.add(new Aresta(6, 2, 1));
-
-        arestasGrafo.add(new Aresta(7, 9, 1));
-
-        arestasGrafo.add(new Aresta(8, 0, 1));
-
-        arestasGrafo.add(new Aresta(9, 7, 1));
-
         //criando o grafo
         br.ufpa.felipph.listaadj.Grafo gAdj = new br.ufpa.felipph.listaadj.Grafo(10);
 
@@ -266,7 +339,7 @@ public class Controller {
 
         System.out.println("Populando o Grafo");
 
-        for (Aresta a : arestasGrafo) {
+        for (Aresta a : this.arestasGrafo2) {
             gAdj.insereAresta(a.v1(), a.v2(), a.peso());
         }
         gAdj.imprime();

@@ -92,6 +92,18 @@ public class Grafo {
             }
         }
     }
+    public String imprimeString() {
+        String s = "";
+        for (int i = 0; i < this.numVertices; i++) {
+            s += "Vertice " + i + ":\n";
+            Celula item = (Celula) this.adj[i].primeiro();
+            while (item != null) {
+                s += "  " + item.vertice + " (" + item.peso + ")\n";
+                item = (Celula) this.adj[i].proximo();
+            }
+        }
+        return s;
+    }
 
     public void listaAdjacentes(int v) {
 
