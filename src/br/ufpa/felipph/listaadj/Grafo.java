@@ -87,9 +87,10 @@ public class Grafo {
             System.out.println("Vertice " + i + ":");
             Celula item = (Celula) this.adj[i].primeiro();
             while (item != null) {
-                System.out.println("  " + item.vertice + " (" + item.peso + ")");
+                System.out.print("  " + item.vertice + " (" + item.peso + "), ");
                 item = (Celula) this.adj[i].proximo();
             }
+            System.out.println("");
         }
     }
     public String imprimeString() {
@@ -98,16 +99,17 @@ public class Grafo {
             s += "Vertice " + i + ":\n";
             Celula item = (Celula) this.adj[i].primeiro();
             while (item != null) {
-                s += "  " + item.vertice + " (" + item.peso + ")\n";
+                s += "  " + item.vertice + " (" + item.peso + "), ";
                 item = (Celula) this.adj[i].proximo();
             }
+            s += "\n";
         }
         return s;
     }
 
     public void listaAdjacentes(int v) {
 
-        System.out.println("Vertice " + v + ":");
+        System.out.println("Listando os adjacentes do Vertice " + v + ":");
         Celula item = (Celula) this.adj[v].primeiro();
         while (item != null) {
             System.out.println("  " + item.vertice + " (" + item.peso + ")");

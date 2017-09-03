@@ -58,7 +58,7 @@ public class Cfc {
                     this.visitaDfs(grafo, v, tt);
                 }
                 a = grafo.proxAdj(u);
-            }
+            }            
         }
     }
 
@@ -78,6 +78,7 @@ public class Cfc {
         
         Grafo grafoT = this.grafo.grafoTransposto();
         grafoT.imprime();
+        System.out.println("Componentes:");
         while (tt.numRestantes > 0) {
             int vRaiz = tt.maxTT();            
             System.out.println("Raiz da proxima arvore: " + vRaiz);

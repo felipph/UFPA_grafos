@@ -39,17 +39,26 @@ public class Grafo {
         }
     }
 
+    public void listaAdjacentes(int v) {
+        System.out.println("Listando os adjacentes do Vertice " + v + ":");
+        for (int i = 0; i < this.mat[v].length; i++) {
+            if (this.mat[v][i] > 0) {
+                System.out.println("\t Vertice: " + i);
+            }
+        }
+
+    }
+
     public void insereAresta(int v1, int v2, int peso) {
-        System.out.println("Criando aresta direcionada entre "+ v1+ " e " + v2);
+        System.out.println("Criando aresta direcionada entre " + v1 + " e " + v2);
         this.mat[v1][v2] = peso;
     }
 
     public boolean existeAresta(int v1, int v2) {
-        System.out.println("Checando se existe o índice ["+v1+"]"
-                + "["+v2+"]");
+        System.out.println("Checando se existe o índice [" + v1 + "]"
+                + "[" + v2 + "]");
         return (this.mat[v1][v2] > 0);
     }
-    
 
     public boolean listaAdjVazia(int v) {
         for (int i = 0; i < this.numVertices; i++) {

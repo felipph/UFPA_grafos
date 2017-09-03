@@ -17,6 +17,7 @@ import java.util.logging.Logger;
  */
 public class TelaInicial extends javax.swing.JFrame {
 
+    
     /**
      * Creates new form TelaInicial
      */
@@ -246,7 +247,7 @@ public class TelaInicial extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnQ1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQ1ActionPerformed
-        // TODO add your handling code here:
+        this.c.q3();        // TODO add your handling code here:
     }//GEN-LAST:event_btnQ1ActionPerformed
 
     private void btnQ2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQ2ActionPerformed
@@ -260,23 +261,34 @@ public class TelaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_btnQ2ActionPerformed
 
     private void btnQ3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQ3ActionPerformed
-        // TODO add your handling code here:
+        this.c.q2();        // TODO add your handling code here:
     }//GEN-LAST:event_btnQ3ActionPerformed
 
     private void btnQ4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQ4ActionPerformed
-        // TODO add your handling code here:
+        this.c.q4();
     }//GEN-LAST:event_btnQ4ActionPerformed
 
     private void btnQ5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQ5ActionPerformed
-        // TODO add your handling code here:
+        this.c.q5();        // TODO add your handling code here:
     }//GEN-LAST:event_btnQ5ActionPerformed
 
     private void btnQ6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQ6ActionPerformed
-        // TODO add your handling code here:
+        this.c.q6();
+        try {
+            this.c.showGrafo2();
+        } catch (IOException ex) {
+            Logger.getLogger(TelaInicial.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }//GEN-LAST:event_btnQ6ActionPerformed
 
     private void btnQ7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQ7ActionPerformed
-        // TODO add your handling code here:
+        this.c.q7();
+        try {
+            this.c.showGrafo2();
+        } catch (IOException ex) {
+            Logger.getLogger(TelaInicial.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnQ7ActionPerformed
 
     private void btnQ8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQ8ActionPerformed
