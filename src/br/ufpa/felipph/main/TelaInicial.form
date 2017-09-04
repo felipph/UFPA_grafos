@@ -26,23 +26,22 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="btnQ4" alignment="0" min="-2" pref="86" max="-2" attributes="0"/>
-                  <Component id="btnQ5" alignment="0" min="-2" pref="86" max="-2" attributes="0"/>
-                  <Component id="btnQ6" alignment="0" min="-2" pref="86" max="-2" attributes="0"/>
-                  <Component id="btnQ7" alignment="0" min="-2" pref="86" max="-2" attributes="0"/>
-                  <Component id="btnQ8" alignment="0" min="-2" pref="86" max="-2" attributes="0"/>
-                  <Component id="btnQ9" alignment="0" min="-2" pref="86" max="-2" attributes="0"/>
-                  <Component id="btnQ10" alignment="0" min="-2" pref="86" max="-2" attributes="0"/>
-                  <Component id="btnQ11" alignment="0" min="-2" pref="86" max="-2" attributes="0"/>
-                  <Component id="btnQ12" alignment="0" min="-2" pref="86" max="-2" attributes="0"/>
-                  <Component id="btnQ13" alignment="0" min="-2" pref="86" max="-2" attributes="0"/>
-                  <Component id="btnQ14" alignment="0" min="-2" pref="86" max="-2" attributes="0"/>
-                  <Component id="btnQ2" alignment="0" min="-2" pref="86" max="-2" attributes="0"/>
-                  <Component id="btnQ1" alignment="0" min="-2" pref="86" max="-2" attributes="0"/>
-                  <Component id="btnQ3" alignment="0" min="-2" pref="86" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="2" attributes="0">
+                  <Component id="btnQ14" linkSize="1" alignment="2" min="-2" pref="108" max="-2" attributes="0"/>
+                  <Component id="btnQ13" linkSize="1" alignment="2" min="-2" pref="108" max="-2" attributes="0"/>
+                  <Component id="btnQ12" linkSize="1" alignment="2" min="-2" pref="108" max="-2" attributes="0"/>
+                  <Component id="btnQ11" linkSize="1" alignment="2" min="-2" pref="108" max="-2" attributes="0"/>
+                  <Component id="btnQ10" linkSize="1" alignment="2" min="-2" pref="108" max="-2" attributes="0"/>
+                  <Component id="btnQ9" linkSize="1" alignment="2" min="-2" pref="108" max="-2" attributes="0"/>
+                  <Component id="btnQ7" linkSize="1" alignment="2" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnQ6" linkSize="1" alignment="2" min="-2" pref="108" max="-2" attributes="0"/>
+                  <Component id="btnQ5" linkSize="1" alignment="2" min="-2" pref="108" max="-2" attributes="0"/>
+                  <Component id="btnQ4" linkSize="1" alignment="2" min="-2" pref="108" max="-2" attributes="0"/>
+                  <Component id="btnQ1" linkSize="1" alignment="2" min="-2" pref="108" max="-2" attributes="0"/>
+                  <Component id="btnQ3" linkSize="1" alignment="2" min="-2" pref="108" max="-2" attributes="0"/>
+                  <Component id="btnQ2" linkSize="1" alignment="2" min="-2" pref="108" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jPanel1" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -55,33 +54,32 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jPanel1" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
-                      <Component id="btnQ2" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnQ2" linkSize="2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnQ3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnQ3" linkSize="2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnQ1" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnQ1" linkSize="2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnQ4" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnQ4" linkSize="2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnQ5" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnQ5" linkSize="2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnQ6" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnQ6" linkSize="2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnQ7" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnQ7" linkSize="2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnQ8" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnQ9" linkSize="2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnQ9" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnQ10" linkSize="2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnQ10" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnQ11" linkSize="2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnQ11" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnQ12" linkSize="2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnQ12" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnQ13" linkSize="2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnQ13" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnQ14" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnQ14" linkSize="2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="46" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace min="-2" max="-2" attributes="0"/>
@@ -140,18 +138,10 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnQ7">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Quest&#xe3;o 7"/>
+        <Property name="text" type="java.lang.String" value="Quest&#xe3;o 7 e 8"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnQ7ActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnQ8">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Quest&#xe3;o 8"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnQ8ActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnQ9">
@@ -214,9 +204,9 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
+              <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jScrollPane1" pref="427" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" pref="505" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>

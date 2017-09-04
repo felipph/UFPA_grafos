@@ -29,12 +29,19 @@ public class Grafo {
     }
     private Lista adj[];
     private int numVertices;
+    
+    private int grausNaoOrientado[];
+    private int grausOrientado[];
 
     public Grafo(int numVertices) {
         this.adj = new Lista[numVertices];
+        this.grausOrientado = new int[numVertices];
+        this.grausNaoOrientado = new int[numVertices];
         this.numVertices = numVertices;
         for (int i = 0; i < this.numVertices; i++) {
             this.adj[i] = new Lista();
+            this.grausOrientado[i] = 0;
+            this.grausNaoOrientado[i] = 0;
         }
     }  //@\lstcontinue@
 
@@ -45,11 +52,30 @@ public class Grafo {
             this.adj[i] = new Lista();
         }
     }  //@\lstcontinue@
-
+    
+    public void insereArestaNaoDirecionada (int v1, int v2, int peso) {
+        System.out.println("Criando aresta entre " + v1 + " e " + v2);
+        Celula item = new Celula(v2, peso);
+        this.adj[v1].insere(item);
+        
+        item = new Celula(v1, peso);
+        this.adj[v2].insere(item);
+        this.grausNaoOrientado[v1]++;
+        this.grausNaoOrientado[v2]++;
+        
+    }
+    
     public void insereAresta(int v1, int v2, int peso) {
         System.out.println("Criando aresta entre " + v1 + " e " + v2);
         Celula item = new Celula(v2, peso);
         this.adj[v1].insere(item);
+        this.grausOrientado[v1]++;
+    }
+    
+    public void imprimeGraus(){
+        for(int i =0 ; i < this.numVertices ; i++){
+            System.out.println("Vertice "+i+": "+this.grausOrientado[i]);
+        }
     }
 
     public boolean existeAresta(int v1, int v2) {

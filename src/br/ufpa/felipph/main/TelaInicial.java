@@ -17,18 +17,18 @@ import java.util.logging.Logger;
  */
 public class TelaInicial extends javax.swing.JFrame {
 
-    
     /**
      * Creates new form TelaInicial
      */
     Controller c = new Controller();
+
     public TelaInicial() {
         initComponents();
         TextAreaOutputStream t = new TextAreaOutputStream(txtSaida);
-        PrintStream ps = new PrintStream( t );
-        System.setOut( ps );
-        System.setErr( ps );
-       
+        PrintStream ps = new PrintStream(t);
+        System.setOut(ps);
+        System.setErr(ps);
+
     }
 
     /**
@@ -47,7 +47,6 @@ public class TelaInicial extends javax.swing.JFrame {
         btnQ5 = new javax.swing.JButton();
         btnQ6 = new javax.swing.JButton();
         btnQ7 = new javax.swing.JButton();
-        btnQ8 = new javax.swing.JButton();
         btnQ9 = new javax.swing.JButton();
         btnQ10 = new javax.swing.JButton();
         btnQ11 = new javax.swing.JButton();
@@ -103,17 +102,10 @@ public class TelaInicial extends javax.swing.JFrame {
             }
         });
 
-        btnQ7.setText("Questão 7");
+        btnQ7.setText("Questão 7 e 8");
         btnQ7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnQ7ActionPerformed(evt);
-            }
-        });
-
-        btnQ8.setText("Questão 8");
-        btnQ8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnQ8ActionPerformed(evt);
             }
         });
 
@@ -169,9 +161,9 @@ public class TelaInicial extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 427, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 505, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -187,25 +179,27 @@ public class TelaInicial extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnQ4, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnQ5, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnQ6, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnQ7, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnQ8, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnQ9, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnQ10, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnQ11, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnQ12, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnQ13, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnQ14, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnQ2, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnQ1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnQ3, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(btnQ14, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnQ13, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnQ12, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnQ11, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnQ10, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnQ9, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnQ7)
+                    .addComponent(btnQ6, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnQ5, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnQ4, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnQ1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnQ3, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnQ2, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnQ1, btnQ10, btnQ11, btnQ12, btnQ13, btnQ14, btnQ2, btnQ3, btnQ4, btnQ5, btnQ6, btnQ7, btnQ9});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
@@ -227,8 +221,6 @@ public class TelaInicial extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnQ7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnQ8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnQ9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnQ10)
@@ -239,9 +231,12 @@ public class TelaInicial extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnQ13)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnQ14)))
+                        .addComponent(btnQ14)
+                        .addGap(0, 46, Short.MAX_VALUE)))
                 .addContainerGap())
         );
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnQ1, btnQ10, btnQ11, btnQ12, btnQ13, btnQ14, btnQ2, btnQ3, btnQ4, btnQ5, btnQ6, btnQ7, btnQ9});
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -257,7 +252,7 @@ public class TelaInicial extends javax.swing.JFrame {
         } catch (IOException ex) {
             Logger.getLogger(TelaInicial.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
     }//GEN-LAST:event_btnQ2ActionPerformed
 
     private void btnQ3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQ3ActionPerformed
@@ -291,16 +286,26 @@ public class TelaInicial extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnQ7ActionPerformed
 
-    private void btnQ8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQ8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnQ8ActionPerformed
-
     private void btnQ9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQ9ActionPerformed
-        // TODO add your handling code here:
+        try {
+            this.c.q9();
+        } catch (Exception ex) {
+            Logger.getLogger(TelaInicial.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            this.c.showGrafo2();
+        } catch (IOException ex) {
+            Logger.getLogger(TelaInicial.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnQ9ActionPerformed
 
     private void btnQ10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQ10ActionPerformed
-        // TODO add your handling code here:
+        this.c.q10();        
+         try {
+            this.c.showGrafo1();
+        } catch (IOException ex) {
+            Logger.getLogger(TelaInicial.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnQ10ActionPerformed
 
     private void btnQ11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQ11ActionPerformed
@@ -308,7 +313,7 @@ public class TelaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_btnQ11ActionPerformed
 
     private void btnQ12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQ12ActionPerformed
-        // TODO add your handling code here:
+        this.c.q13();// TODO add your handling code here:
     }//GEN-LAST:event_btnQ12ActionPerformed
 
     private void btnQ13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQ13ActionPerformed
@@ -373,7 +378,6 @@ public class TelaInicial extends javax.swing.JFrame {
     private javax.swing.JButton btnQ5;
     private javax.swing.JButton btnQ6;
     private javax.swing.JButton btnQ7;
-    private javax.swing.JButton btnQ8;
     private javax.swing.JButton btnQ9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;

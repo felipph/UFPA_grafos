@@ -5,8 +5,10 @@
  */
 package br.ufpa.felipph.main;
 
+import br.ufpa.felipph.buscas.BuscaEmLargura;
 import br.ufpa.felipph.buscas.BuscaEmProfundidade;
 import br.ufpa.felipph.buscas.Cfc;
+import br.ufpa.felipph.buscas.Dijkstra;
 import br.ufpa.felipph.matrizadj.Aresta;
 import br.ufpa.felipph.matrizadj.Grafo;
 import br.ufpa.felipph.shared.ImgDisplay;
@@ -28,11 +30,10 @@ public class Controller {
     public ArrayList<Aresta> arestasGrafo1 = new ArrayList<Aresta>();
     public ArrayList<Aresta> arestasGrafo2 = new ArrayList<Aresta>();
     public ArrayList<Aresta> arestasGrafo3 = new ArrayList<Aresta>();
+    public String[] listaArestanumeros;
 
     public Controller() {
-
         this.init();
-
     }
 
     public void init() {
@@ -94,6 +95,32 @@ public class Controller {
         this.arestasGrafo2.add(new Aresta(8, 0, 1));
 
         this.arestasGrafo2.add(new Aresta(9, 7, 1));
+
+        /**
+         * Grafo 3
+         */
+        //associando as letras a numeros
+        String[] listaArestanumeros = new String[5];
+        listaArestanumeros[0] = "S";
+        listaArestanumeros[1] = "U";
+        listaArestanumeros[2] = "X";
+        listaArestanumeros[3] = "V";
+        listaArestanumeros[4] = "Y";
+
+        this.listaArestanumeros = listaArestanumeros;
+
+        //criando as arestas
+        this.arestasGrafo3.add(new Aresta(0, 1, 10)); //S-U
+        this.arestasGrafo3.add(new Aresta(0, 2, 5)); //S-X
+        this.arestasGrafo3.add(new Aresta(1, 2, 2));  //U-X  
+        this.arestasGrafo3.add(new Aresta(1, 3, 1));  //U-V  
+        this.arestasGrafo3.add(new Aresta(2, 1, 3));  //X-U        
+        this.arestasGrafo3.add(new Aresta(2, 3, 9));  //X-V
+        this.arestasGrafo3.add(new Aresta(2, 4, 2));  //X-Y
+        this.arestasGrafo3.add(new Aresta(3, 4, 4));  //V-Y
+        this.arestasGrafo3.add(new Aresta(4, 0, 7));  //Y-S
+        this.arestasGrafo3.add(new Aresta(4, 3, 6));  //Y-V
+
     }
 
     public void showGrafo1() throws IOException {
@@ -427,24 +454,93 @@ public class Controller {
 
         gAdj = this.popular_grafo(gAdj, this.arestasGrafo2);
         gAdj.imprime();
-        
-        
+
         Cfc cfc = new Cfc(gAdj);
         System.out.println("Obtendo os componentes fortemente conexos:");
-        
+
         cfc.obterCfc();
+    }
+
+    public void q9() throws Exception {
+        br.ufpa.felipph.listaadj.Grafo gAdj = new br.ufpa.felipph.listaadj.Grafo(10);
+
+        System.out.println("Processamento para obtenção do caminho mais curto");
+        System.out.println("Populando o Grafo (lista de adjacencia:");
+
+        gAdj = this.popular_grafo(gAdj, this.arestasGrafo2);
+        gAdj.imprime();
+        System.out.println("Processando a Busca em largura");
+
+        BuscaEmLargura b = new BuscaEmLargura(gAdj);
+        b.buscaEmLargura();
+        b.imprimeCaminho(1, 5);
+    }
+
+    public void q10() {
+        br.ufpa.felipph.listaadj.Grafo gAdj = new br.ufpa.felipph.listaadj.Grafo(8);
+        gAdj = this.popular_grafo(gAdj, this.arestasGrafo1);
+        gAdj.imprime();
+
+        gAdj.imprimeGraus();
+
+        System.out.println("Não completado!");
+    }
+
+    public void q12() {
+        System.out.println("Não implementado!");
+    }
+
+    public void q13() throws Exception {
+        System.out.println(" Implemente em uma linguagem de programação a sua escolha os algoritmos de\n"
+                + "Dijkstra e Bellman-Ford. Em seguida, use o grafo M como entrada do algoritmos\n"
+                + "implementados e encontre o menor caminho entre o vértice s e os demais vértices de M.\n"
+                + "Apresente o log de execução");
+
+        
+        System.out.println("Populando o grafo(lista)");
+
+        br.ufpa.felipph.listaadj.Grafo gAdj = new br.ufpa.felipph.listaadj.Grafo(5);
+        this.popular_grafo(gAdj, arestasGrafo3);
+
+        gAdj.imprime();
+
+        Dijkstra d = new Dijkstra(gAdj);
+        d.obterArvoreCMC(0);
+//        System.out.println("Menor Caminho entre " + this.listaArestanumeros[0] + " e " + this.listaArestanumeros[1]);
+//        System.out.println(this.listaArestanumeros[d.menorCaminho(0, 1)]);
+//        System.out.println("Menor Caminho entre " + this.listaArestanumeros[0] + " e " + this.listaArestanumeros[2]);
+//        System.out.println(this.listaArestanumeros[d.menorCaminho(0, 2)]);
+//        System.out.println("Menor Caminho entre " + this.listaArestanumeros[0] + " e " + this.listaArestanumeros[3]);
+//        System.out.println(this.listaArestanumeros[d.menorCaminho(0, 3)]);
+//        System.out.println("Menor Caminho entre " + this.listaArestanumeros[0] + " e " + this.listaArestanumeros[4]);
+//        System.out.println(this.listaArestanumeros[d.menorCaminho(0, 4)]);
+//            
+        
+        System.out.println("Dijkstra: ");
+        System.out.println("Para manter a implementação anterior, as letras foram associadas à numeros:");
+        for (int i = 0; i < this.listaArestanumeros.length; i++) {
+            System.out.println("Vertice " + i + " = " + this.listaArestanumeros[i]);
+        }
+        System.out.println("Menor Caminho entre "+this.listaArestanumeros[0]+" e "+this.listaArestanumeros[1]);
+        d.imprimeCaminho(0, 1);
+        System.out.println("Menor Caminho entre "+this.listaArestanumeros[0]+" e "+this.listaArestanumeros[2]);
+        d.imprimeCaminho(0, 2);
+        System.out.println("Menor Caminho entre "+this.listaArestanumeros[0]+" e "+this.listaArestanumeros[3]);
+        d.imprimeCaminho(0, 3);
+        System.out.println("Menor Caminho entre "+this.listaArestanumeros[0]+" e "+this.listaArestanumeros[4]);
+        d.imprimeCaminho(0, 4);
     }
 
     public br.ufpa.felipph.matrizadj.Grafo popular_grafo(br.ufpa.felipph.matrizadj.Grafo g, ArrayList<Aresta> arestas) {
         for (Aresta a : arestas) {
-            g.insereAresta(a.v1(), a.v2(), 1);
+            g.insereAresta(a.v1(), a.v2(), a.peso());
         }
         return g;
     }
 
     public br.ufpa.felipph.listaadj.Grafo popular_grafo(br.ufpa.felipph.listaadj.Grafo g, ArrayList<Aresta> arestas) {
         for (Aresta a : arestas) {
-            g.insereAresta(a.v1(), a.v2(), 1);
+            g.insereAresta(a.v1(), a.v2(), a.peso());
         }
         return g;
     }

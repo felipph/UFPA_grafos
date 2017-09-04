@@ -7,6 +7,7 @@ package br.ufpa.felipph.buscas;
 
 import br.ufpa.felipph.listaadj.Grafo;
 import br.ufpa.felipph.matrizadj.Aresta;
+import java.util.ArrayList;
 
 /**
  *
@@ -27,7 +28,7 @@ public class BuscaEmProfundidade {
         t = new int[n];
         antecessor = new int[n];
     }
-
+    
     private int visitaDfs(int u, int tempo, int cor[]) {
         cor[u] = cinza;
         this.d[u] = ++tempo;
@@ -36,6 +37,9 @@ public class BuscaEmProfundidade {
             Aresta a = this.grafo.primeiroListaAdj(u);
             while (a != null) {
                 int v = a.v2();
+                if(cor[v] == cinza){
+                    System.out.println("CICLO em "+ v +"!");
+                }
                 if (cor[v] == branco) {
                     this.antecessor[v] = u;
                     tempo = this.visitaDfs(v, tempo, cor);
