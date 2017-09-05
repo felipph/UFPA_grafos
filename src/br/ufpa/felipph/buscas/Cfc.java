@@ -67,7 +67,7 @@ public class Cfc {
         BuscaEmProfundidade dfs = new BuscaEmProfundidade(this.grafo);
         dfs.buscaEmProfundidade();
         
-        System.out.println("Obterndo os tempos");
+        System.out.println("Obtendo os tempos");
         TempoTermino tt = new TempoTermino(this.grafo.numVertices());
         for (int u = 0; u < this.grafo.numVertices(); u++) {
             System.out.println("Vertice "+u+" - tempo: "+dfs.t(u));

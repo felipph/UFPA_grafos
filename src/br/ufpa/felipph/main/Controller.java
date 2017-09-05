@@ -476,17 +476,44 @@ public class Controller {
         b.imprimeCaminho(1, 5);
     }
 
-    public void q10() {
+    public void q10() throws Exception {
         br.ufpa.felipph.listaadj.Grafo gAdj = new br.ufpa.felipph.listaadj.Grafo(8);
         gAdj = this.popular_grafo(gAdj, this.arestasGrafo1);
         gAdj.imprime();
 
         gAdj.imprimeGraus();
 
+        br.ufpa.felipph.matrizadj.Grafo gMatriz = new br.ufpa.felipph.matrizadj.Grafo(8);
+        gMatriz = this.popular_grafo(gMatriz, this.arestasGrafo1);
+        gMatriz.imprime();
+        System.out.println("Conexo?" + gMatriz.conexo());
+
+        System.out.println("Retirando arestas e retestando:");
+
+        gMatriz.retiraAresta(0, 1);
+        gMatriz.retiraAresta(1, 0);
+        gMatriz.retiraAresta(1, 2);
+        gMatriz.retiraAresta(2, 1);
+        gMatriz.retiraAresta(1, 5);
+        gMatriz.retiraAresta(5, 1);
+
+        System.out.println("Conexo?" + gMatriz.conexo());
+
+        System.out.println("Agora com a lista");
+        System.out.println("Conexo? " + gAdj.conexo());
+
+        gAdj.retiraAresta(0, 1);
+        gAdj.retiraAresta(1, 0);
+        gAdj.retiraAresta(1, 2);
+        gAdj.retiraAresta(2, 1);
+        gAdj.retiraAresta(1, 5);
+        gAdj.retiraAresta(5, 1);
+
         System.out.println("Não completado!");
     }
 
     public void q12() {
+
         System.out.println("Não implementado!");
     }
 
@@ -496,7 +523,6 @@ public class Controller {
                 + "implementados e encontre o menor caminho entre o vértice s e os demais vértices de M.\n"
                 + "Apresente o log de execução");
 
-        
         System.out.println("Populando o grafo(lista)");
 
         br.ufpa.felipph.listaadj.Grafo gAdj = new br.ufpa.felipph.listaadj.Grafo(5);
@@ -515,19 +541,19 @@ public class Controller {
 //        System.out.println("Menor Caminho entre " + this.listaArestanumeros[0] + " e " + this.listaArestanumeros[4]);
 //        System.out.println(this.listaArestanumeros[d.menorCaminho(0, 4)]);
 //            
-        
+
         System.out.println("Dijkstra: ");
         System.out.println("Para manter a implementação anterior, as letras foram associadas à numeros:");
         for (int i = 0; i < this.listaArestanumeros.length; i++) {
             System.out.println("Vertice " + i + " = " + this.listaArestanumeros[i]);
         }
-        System.out.println("Menor Caminho entre "+this.listaArestanumeros[0]+" e "+this.listaArestanumeros[1]);
+        System.out.println("Menor Caminho entre " + this.listaArestanumeros[0] + " e " + this.listaArestanumeros[1]);
         d.imprimeCaminho(0, 1);
-        System.out.println("Menor Caminho entre "+this.listaArestanumeros[0]+" e "+this.listaArestanumeros[2]);
+        System.out.println("Menor Caminho entre " + this.listaArestanumeros[0] + " e " + this.listaArestanumeros[2]);
         d.imprimeCaminho(0, 2);
-        System.out.println("Menor Caminho entre "+this.listaArestanumeros[0]+" e "+this.listaArestanumeros[3]);
+        System.out.println("Menor Caminho entre " + this.listaArestanumeros[0] + " e " + this.listaArestanumeros[3]);
         d.imprimeCaminho(0, 3);
-        System.out.println("Menor Caminho entre "+this.listaArestanumeros[0]+" e "+this.listaArestanumeros[4]);
+        System.out.println("Menor Caminho entre " + this.listaArestanumeros[0] + " e " + this.listaArestanumeros[4]);
         d.imprimeCaminho(0, 4);
     }
 

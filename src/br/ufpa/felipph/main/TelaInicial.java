@@ -300,7 +300,11 @@ public class TelaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_btnQ9ActionPerformed
 
     private void btnQ10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQ10ActionPerformed
-        this.c.q10();        
+        try {        
+            this.c.q10();
+        } catch (Exception ex) {
+            Logger.getLogger(TelaInicial.class.getName()).log(Level.SEVERE, null, ex);
+        }
          try {
             this.c.showGrafo1();
         } catch (IOException ex) {
@@ -313,7 +317,11 @@ public class TelaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_btnQ11ActionPerformed
 
     private void btnQ12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQ12ActionPerformed
-        this.c.q13();// TODO add your handling code here:
+        try {
+            this.c.q13();// TODO add your handling code here:
+        } catch (Exception ex) {
+            Logger.getLogger(TelaInicial.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnQ12ActionPerformed
 
     private void btnQ13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQ13ActionPerformed

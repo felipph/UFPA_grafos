@@ -39,6 +39,21 @@ public class Grafo {
         }
     }
 
+    public boolean conexo() {
+        for (int i = 0; i < this.mat.length; i++) {
+            int sum1 = 0;
+            int sum2 = 0;
+            for (int j = 0; j < this.mat[i].length; j++) {
+                sum1 += this.mat[i][j];
+                sum2 += this.mat[j][i];
+            }
+            if(sum1 == 0 && sum2 == 0){
+                return false;
+            }
+        }
+        return true;
+    }
+
     public void listaAdjacentes(int v) {
         System.out.println("Listando os adjacentes do Vertice " + v + ":");
         for (int i = 0; i < this.mat[v].length; i++) {

@@ -29,7 +29,7 @@ public class Grafo {
     }
     private Lista adj[];
     private int numVertices;
-    
+
     private int grausNaoOrientado[];
     private int grausOrientado[];
 
@@ -52,29 +52,29 @@ public class Grafo {
             this.adj[i] = new Lista();
         }
     }  //@\lstcontinue@
-    
-    public void insereArestaNaoDirecionada (int v1, int v2, int peso) {
+
+    public void insereArestaNaoDirecionada(int v1, int v2, int peso) {
         System.out.println("Criando aresta entre " + v1 + " e " + v2);
         Celula item = new Celula(v2, peso);
         this.adj[v1].insere(item);
-        
+
         item = new Celula(v1, peso);
         this.adj[v2].insere(item);
         this.grausNaoOrientado[v1]++;
         this.grausNaoOrientado[v2]++;
-        
+
     }
-    
+
     public void insereAresta(int v1, int v2, int peso) {
         System.out.println("Criando aresta entre " + v1 + " e " + v2);
         Celula item = new Celula(v2, peso);
         this.adj[v1].insere(item);
         this.grausOrientado[v1]++;
     }
-    
-    public void imprimeGraus(){
-        for(int i =0 ; i < this.numVertices ; i++){
-            System.out.println("Vertice "+i+": "+this.grausOrientado[i]);
+
+    public void imprimeGraus() {
+        for (int i = 0; i < this.numVertices; i++) {
+            System.out.println("Vertice " + i + ": " + this.grausOrientado[i]);
         }
     }
 
@@ -119,6 +119,7 @@ public class Grafo {
             System.out.println("");
         }
     }
+
     public String imprimeString() {
         String s = "";
         for (int i = 0; i < this.numVertices; i++) {
@@ -148,16 +149,42 @@ public class Grafo {
         System.out.println("Vertice " + v1 + ":");
         Celula item = (Celula) this.adj[v1].primeiro();
         while (item != null) {
-            System.out.println("Comparando adjacente: "+item.vertice +" com "+v2);
+            System.out.println("Comparando adjacente: " + item.vertice + " com " + v2);
             if (item.vertice == v2) {
                 System.out.println("  " + item.vertice + " (" + item.peso + ")");
                 return true;
-               
+
             }
             item = (Celula) this.adj[v1].proximo();
 
         }
         return false;
+    }
+
+    public boolean conexo() {
+        //criando um vetor do tamanho dos vertice
+        int[] vetores = new int[this.numVertices];
+        //inicializando
+        for (int i = 0; i < this.adj.length; i++) {
+            vetores[i] = 0;
+        }
+        for (int i = 0; i < this.adj.length; i++) {
+            vetores[i] = 0;
+            Celula item = (Celula) this.adj[i].primeiro();
+            while (item != null) {
+                System.out.println("Vertice "+i+ "tem aresta");
+                vetores[i]++;
+                vetores[item.vertice]++;
+                item = (Celula) this.adj[i].proximo();
+            }
+        }
+        // checando
+        for (int i = 0; i < this.adj.length; i++) {
+            if(vetores[i]==0){
+                return false;
+            }
+        }
+        return true;
     }
 
     public int numVertices() {
