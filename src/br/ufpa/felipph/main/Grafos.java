@@ -36,7 +36,7 @@ public class Grafos {
 
         System.out.println("Atividade prática de implementação de GRAFOS em JAVA");
 
-        TelaInicial t = new TelaInicial();
+        QQGrafo t = new QQGrafo();
         t.setVisible(true);
     }
 

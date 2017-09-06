@@ -32,36 +32,39 @@ public class BuscaEmLargura {
         cor[u] = cinza;
         this.d[u] = 0;
         Fila fila = new Fila();
-        System.out.println("Enfileirando "+u);
+        System.out.println("Enfileirando " + u);
         fila.enfileira(new Integer(u));
 //        System.out.print ("Visita origem:"+u+" cor: cinza F:");
 //        fila.imprime ();
         while (!fila.vazia()) {
             Integer aux = (Integer) fila.desenfileira();
             u = aux.intValue();
-            System.out.println("Desenfileirando "+u);
+            System.out.println("Desenfileirando " + u);
             if (!this.grafo.listaAdjVazia(u)) {
-                System.out.println("Obtendo a primeira aresta de "+u);
+                System.out.println("Obtendo a primeira aresta de " + u);
                 Aresta a = this.grafo.primeiroListaAdj(u);
                 while (a != null) {
                     int v = a.v2();
-                    System.out.println("Verificando se o vertice adjacente "+v+" ja foi visitado:");
+                    System.out.println("Verificando se o vertice adjacente " + v + " ja foi visitado:");
                     if (cor[v] == branco) {
-                        System.out.println("Pintando "+v+" de cinza");
-                        cor[v] = cinza; 
-                        System.out.println("d["+v+"] + 1");
+                        System.out.println("Pintando " + v + " de cinza");
+                        cor[v] = cinza;
+                        System.out.println("d[" + v + "] + 1");
                         this.d[v] = this.d[u] + 1;
-                        System.out.println("pi["+v+"] = "+u);
+                        System.out.println("pi[" + v + "] = " + u);
                         this.antecessor[v] = u;
-                        System.out.println("Enfileirando "+v);
+                        System.out.println("Enfileirando " + v);
                         fila.enfileira(new Integer(v));
+                    } else {
+                        System.out.println("Já Visitado: " + v);
                     }
                     a = this.grafo.proxAdj(u);
                 }
             }
+            System.out.println("Pintando o vertice " + u + " de preto");
             cor[u] = preto;
-//      System.out.print("Visita "+u+" dist: "+this.d[u]+" cor: preto F:");
-//      fila.imprime ();
+            System.out.print("Visita " + u + " dist: " + this.d[u] + " cor: preto F:");
+            fila.imprime();
         }
     }
 
@@ -70,15 +73,15 @@ public class BuscaEmLargura {
         System.out.println("Pintando todos os vertices de branco:");
         for (int u = 0; u < grafo.numVertices(); u++) {
             cor[u] = branco;
-            System.out.println(u+": branco");
-            System.out.println("D["+u+"] INFINITO");            
+            System.out.println(u + ": branco");
+            System.out.println("D[" + u + "] INFINITO");
             this.d[u] = Integer.MAX_VALUE;
-            System.out.println("PI["+u+"] NIL");
+            System.out.println("PI[" + u + "] NIL");
             this.antecessor[u] = -1;
         }
         for (int u = 0; u < grafo.numVertices(); u++) {
             if (cor[u] == branco) {
-                System.out.println("Visitando vizinhos de "+ u);
+                System.out.println("Visitando vizinhos de " + u);
                 this.visitaBfs(u, cor);
             }
         }

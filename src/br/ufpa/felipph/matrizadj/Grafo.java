@@ -26,6 +26,11 @@ public class Grafo {
             this.pos[i] = -1;
         }
     }
+    
+    public int[][] getMatriz(){
+        System.out.println(this.mat[0][0]);
+        return this.mat;
+    }
 
     public Grafo(int numVertices, int numArestas) {
         this.mat = new int[numVertices][numVertices];
